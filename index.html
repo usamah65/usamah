@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slicing lading page</title>
+    <style>
+                /* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+    body {
+        line-height: 1.6;
+        color: gray;
+    }
+
+    /* Header */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10%;
+        background-color: #B0A695;
+        color: white;
+        height: 76px;
+    }
+
+    .awal {
+        font-style: oblique;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .name {
+        color: rgb(111, 123, 134);
+        font-family: gatau ;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .button-1 {
+        padding: 10px 20px;
+        background-color: #aaa295;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        border: 2px solid white;
+    }
+
+    .about {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .about:hover {
+        background-color: black;
+    }
+
+    .home {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .home:hover {
+        background-color: black
+    }
+
+    .portofolio {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .portofolio:hover {
+        background-color: black;
+    }
+
+    .button-1:hover {
+        background-color: black;
+    }
+
+    /* hero section */
+    .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        color: black;
+        justify-content: center;
+        padding: 1% 56px;
+        background: #EBE3D5;
+    }
+
+    .hero-content {
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+    }
+
+
+    .hero-text {
+        max-width: 50%;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .button-2 {
+        background-color: #6B8A7A;
+        color: white;
+        font-size: 0.9rem;
+        padding: 8px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+
+    .button-2:hover {
+        background-color: #254336;
+    }
+
+    .hero-image {
+        max-width: 40%;
+    }
+
+    .hero-image img {
+        width: 400px;
+        height: 400px;
+        border-radius: 10px;
+    }
+
+    /* keahlian section */
+    .keahlian {
+        text-align: left;
+        padding: 40px 6%;
+        width: 1300px;
+        height: 558px;
+        background-color: #F3EEEA;
+    }
+
+    h2 {
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+    }
+
+    .skill-kontener {
+        justify-content: space-between;
+        display: flex;
+        gap: 30px;
+    }
+
+    .item-skill {
+        width: 30%;
+        border-radius: 10px;
+        padding: 25px;
+        background-color: rgb(242, 242, 242);
+        box-shadow: 0 5px 15px rgb(161, 161, 161);
+    }
+
+    .item-skill img {
+        margin-bottom: 10px;
+    }
+
+    .item-skill h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .item-skill p {
+        font-size: 1rem;
+    }
+
+    /* about section */ 
+.myabout {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 450px 5%;
+  background: #EBE3D5;
+  color: black;
+}
+
+.myabout-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.myabout-image {
+  max-width: 60%;
+}
+
+.myabout-image img {
+  width: 500px;
+  height: 400px;
+  border-radius: 10px;
+}
+
+.myabout-text {
+  max-width: 50%;
+  text-align: left;
+}
+
+.myabout-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.myabout-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+    /* Portofolio Section */
+.atasan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #F3EEEA;
+    color: black;
+}
+
+.judul {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.btn-aksi {
+    padding: 10px 20px;
+    background-color: #6B8A7A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-aksi:hover {
+    background-color: #254336;
+}
+
+/* Konten Portofolio */
+.konten {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 5%;
+    background-color: #EBE3D5;
+    gap: 20px;
+}
+
+.card {
+    width: 50%;
+    background-color: rgb(242, 242, 242);
+    box-shadow: 10px 6px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: left; 
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #ddd;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.btn-card {
+    padding: 10px 20px;
+    background-color: rgb(76, 114, 113);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    align-self: flex-start; 
+}
+
+.btn-card:hover {
+    background-color: rgb(183, 183, 183);
+}
+
+    /* contact section */
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #fbf5ec;
+    text-align: center;
+}
+
+.contact-content {
+    width: 60%;
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.small-text {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.small-description {
+    font-size: 1rem;
+    color: gray;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input, 
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+}
+
+.form-options {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-options label {
+    font-size: 0.9rem;
+}
+
+.submit-button {
+    background-color: rgb(103, 103, 103);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto 0;
+}
+
+.submit-button:hover {
+    background-color: rgb(159, 159, 159);
+}
+
+    /* gtau */
+    .footer-area {
+        background-color: #ebe6dd;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo-img {
+    width: 100px; 
+}
+
+.footer-menu {
+    display: flex;
+    gap: 20px
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 24px; 
+}
+
+.footer-divider-half {
+    height: 2px;
+    background-color: #7f7f7f;
+    width: 92%; 
+    margin: 0 auto; 
+    margin-top: 75px; 
+    margin-bottom: 35px; 
+}
+
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-text {
+    color: #666;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- header section -->
+    <header>
+        <div class="logo">logo</div>
+        <nav>
+            <ul>
+                <li><a href="#myabout" class="about">About</a></li>
+                <li><a href="#Home" class="home">Home</a></li>
+                <li><a href="#Portofolio" class="portofolio">Portofolio</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="button-1">Contact me</a>
+    </header>     
+    <!-- awal section -->
+    <section class="hero" id="Home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="awal">I'm <span class="name">usamah</span></h1>
+                <p>Perkenalkan nama saya usamah, saya adalah seorang santri dari pondok tahfidz abudzar, 
+                </p>
+                <a href="#" class="button-2">click here</a>
+            </div>
+            <div class="hero-image">
+                <img src="image/download__4_-removebg-preview (1).png" alt="Gambar Hero" />
+              </div>
+        </div>
+     </section>
+
+     <!-- keahlian section -->
+     <section class=" keahlian" id="keahlian">
+        <p>My skill</p>
+        <h2>Keahlian saya</h2>
+        <div class="skill-kontener">
+            <div class="item-skill">
+                <img src="image/icons8-quran-52.png" alt="gambar">
+                <h3>Tahfidz</h3>
+                <p>Saya ahli di bidang tahfidz dan saya juga menyukainya karena menghafal itu seru,
+                    kadang susah kadang gampang.
+                </p>
+            </div>
+            <div class="item-skill">
+                <img src="image/icons8-track-and-field-50.png" alt="gambar">
+                <h3>Olahraga</h3>
+                <p>Saya kalau di bidang olahraga bisa, mungkin tidak semua olahraga, mungkin ada beberapa
+                    yang tidak bisa. </p>
+            </div>
+            <div class="item-skill">
+                <img src="image/icons8-quill-pen-64.png" alt="gambar">
+                <h3>Design</h3>
+                <p>Kalo bisa dibilang saya design itu tidak jago, ya gimana cuma buat menuhin aja.</p>
+            </div>
+     </section>
+
+    <!-- about section -->
+    <section class="myabout" id="myabout">
+        <div class="myabout-content">
+            <div class="myabout-image">
+                <img src="image/Desain tanpa judul (1).png" alt="Gambar Hero" >
+            </div>
+            <div class="myabout-text">
+            <h1>Tentang saya</h1>
+            <p>Assalamu'alaikum, saya adalah usamah seperti yang sudah saya bilang di atas,
+                saya adalah santri kelas 9 smp, seperti ini ya mondok akhirnya saya merasakan yang namanya mondok.
+            </p>
+                 <br>
+            <p>Saya 4 bersaudara dan saya anak ke 4, saya mempunyai keluarga yang saya cintai,
+                dan saya akan selalu mendo'a kan keluarga saya dan juga saya selalu support mereka.
+            </p>
+        </div>
+        </div>
+    </section>
+    <!-- portofolio section -->
+    <header class="atasan" id="Portofolio">
+        <h1 class="judul">Portofolio</h1>
+        <button class="btn-aksi">visit my figma</button>
+    </header>
+    <section class="konten">
+        <div class="card">
+            <img src="image/Frame 15 (4).png" alt="Gambar 1" class="card-image">
+            <div class="card-content">
+                <h2>Home travel. 1</h2>
+                <p>Ini adalah salah satu karya saya dari figma. Saya membuatnya dengan nama Home Travel</p>
+                <a href="#" class="btn-card">Lihat Detail</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/Desktop - 2.png" alt="Gambar 2" class="card-image">
+            <div class="card-content">
+                <h2>Poster dakwah</h2>
+                <p>Saya juga punya lebih dari 1 poster tapi saya mengambil poster ini karena ukurannya pas.</p>
+                <a href="#" class="btn-card">Lihat Detail</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/Frame 15 (3).png" alt="Gambar 3" class="card-image">
+            <div class="card-content">
+                <h2>Home travel. 2</h2>
+                <p>Ini juga hasil poster tentang home travel, tetapi ada perbedaan juga, dan ini adalah hasil karya saya sendiri.</p>
+                <a href="#" class="btn-card">Lihat Detail</a>
+            </div>
+        </div>
+     </section> 
+     
+     <!-- contact section -->
+      <p></p>
+     <section class="contact">
+        <div class="contact-content">
+            <p class="small-text">Silahkan hubungi saya </p>
+            <h2>Kontak saya</h2>
+            <p class="small-description">Isi formulir di bawah ini untuk menghubungi saya.</p>
+    
+            <form class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">Nama Depan</label>
+                        <input type="text" id="first-name" placeholder="Masukkan nama depan">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Nama Belakang</label>
+                        <input type="text" id="last-name" placeholder="Masukkan nama belakang">
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Masukkan email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Masukkan password">
+                    </div>
+                </div>
+    
+                <div class="form-group full-width">
+                    <label for="info">Keterangan</label>
+                    <input type="text" id="info" placeholder="Masukkan keterangan">
+                </div>
+    
+                <div class="form-group full-width">
+                    <label for="message">Pesan</label>
+                    <textarea id="message" rows="5" placeholder="Masukkan pesan Anda"></textarea>
+                </div>
+    
+                <div class="form-options">
+                    <div>
+                        <input type="checkbox" id="agree">
+                        <label for="agree">Saya setuju dengan syarat dan ketentuan</label>
+                    </div>
+                </div>
+    
+                <button type="submit" class="submit-button">Kirim Pesan</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- gatau bagian ap?? -->
+<div class="footer-area">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="path/to/logo.png" alt="Logo" class="logo-img">
+        </div>
+        <div class="footer-menu">
+            <a href="#about">About</a>
+            <a href="#home">Home</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-icons">
+            <a href="#instagram"><img src="image/instagram.png" alt="Instagram" class="social-icon"></a>
+            <a href="#facebook"><img src="image/facebook.png" alt="Facebook" class="social-icon"></a>
+            <a href="#twitter"><img src="image/twitter.png" alt="Twitter" class="social-icon"></a>
+            <a href="#whatsapp"><img src="image/tinckerked.png" alt="tinckerked" class="social-icon"></a>
+        </div>
+    </div>
+    <div class="footer-divider-half"></div> 
+    <div class="footer-bottom">
+        <div class="footer-text">Made with by : usamah</div>
+        <div class="footer-links">
+            <a href="#privacy-policy">Privacy Policy</a>
+            <a href="#terms-of-service">Terms of Service</a>
+            <a href="#cookies-setting">Cookies Setting</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
